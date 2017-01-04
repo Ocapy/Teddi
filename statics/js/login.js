@@ -51,7 +51,7 @@ $(document).ready(function() {
     let href = formulario.getAttribute('action')
     $.ajax({
 
-      url: href+'App/Sign',
+      url: href+'admin/Auth/Sign',
       type: 'POST',
       dataType: 'json',
       data: {correo: cor, clave:cla}

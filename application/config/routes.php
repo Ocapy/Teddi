@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-
+$route['admin'] = 'admin/Auth';
 $route['default_controller'] = 'Home';
 // URI like '/en/about' -> use controller 'about'
 $route['^(en|es)/(.+)$'] = "$2";
