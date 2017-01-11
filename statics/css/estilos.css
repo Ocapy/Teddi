@@ -10,7 +10,21 @@
   background-color: #ffb300;
   color: #ffffff;
 }
+
 /* ============================ helper ============================ */
+.open-sans.regular {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+.open-sans.italic {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.open-sans.bold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
 .parrafo {
   padding: 0 15px;
   text-align: justify;
@@ -18,6 +32,12 @@
 .logo-osaky {
   width: auto;
   height: inherit;
+}
+.padding-top {
+  margin-top: 2em;
+}
+.border-left-amber {
+  border-left: 5px solid #ffb300;
 }
 /* ============================ Style Placeholders 5680 ============================*/
 /*::-webkit-input-placeholder {
@@ -77,20 +97,23 @@
 .facebook-bg {
   background-color: #3b5998;
 }
-.facebook {
+/*.facebook-bg:hover {
   color: #3b5998;
-}
+  background-color: #ffffff;
+}*/
 /*twitter*/
 .twitter-bg {
   background-color: #55acee;
 }
-.twitter {
+/*.twitter-bg:hover {
   color: #55acee;
-}
+  background-color: #ffffff;
+}*/
 /*google plus*/
 .google-plus-bg {
   background-color: #dd4b39;
 }
-.google-plus {
+/*.google-plus-bg:hover {
   color: #dd4b39;
-}
+  background-color: #ffffff;
+}*/

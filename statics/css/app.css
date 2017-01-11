@@ -5,9 +5,33 @@
 */
 html, body, .full-screen {
   height: 100%;
-  margin: 0;
+}
+#alert {
+  width: 100%;
 }
 /*
 ====================== clases ayudantes
 ====================== helper class
+*/
+.full {
+  max-height: 100vh;
+}
+
+.position-fixed {
+  position: fixed;
+}
+.thumb {
+  height: 75px;
+  border: 1px solid #000;
+  margin: 10px 5px 0 0;
+}
+.fixed {
+  position: fixed;
+}
+.black-menu {
+  background-color: #292b2c;
+}
+/*
+====================== clases ayudantes de color
+====================== helper class color
 */

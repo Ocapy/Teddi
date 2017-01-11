@@ -12,14 +12,27 @@ class Auth extends CI_Controller {
 
   public function index() {
 
-    $this->load->view('templates/header');
-    $this->load->view('admin/login');
-    $data['script'] = base_url('statics/js/login.js');
-    $this->load->view('templates/footer',$data);
-
+    $this->smarty->assign(array(
+      'path' => base_url(),
+      'statics' => array(
+        'scripts' => array(
+          'jquery' => base_url('statics/js/jquery-3.1.1.min.js'),
+          'custom' => base_url('statics/js/login.js'),
+        ),
+        'icons' => array(
+          'favicon' => base_url('statics/media/favicon.png'),
+          'awesome' => base_url('statics/css/font-awesome.min.css'),
+        ),
+        'css' => array(
+          'animate' => base_url('statics/css/animate.css'),
+          'app' => base_url('statics/css/app.css'),
+        )
+      )
+    ));
+    $this->smarty->view('admin/login.tpl');
   }
 
-  public function Sign() {
+  public function SignIn() {
 
     $this->load->model('ModelUser');
     $result = $this->ModelUser->SignIn($_POST);
@@ -30,11 +43,13 @@ class Auth extends CI_Controller {
         'logged_in' => TRUE
       );
       $this->session->set_userdata($newdata);
-      $alerta['mensaje'] = "<span><b><i class=\'fa fa-check\'></i> Correcto:</b> Te estamos redireccionado</span>";
-      $alerta['clase'] = "green black-text";
+      $alerta['mensaje'] = "Te estamos redireccionado";
+      $alerta['titulo'] = "<b><i class=\'fa fa-check\'></i> Correcto:</b>";
+      $alerta['clase'] = "alert-success";
     } else {
-      $alerta['mensaje'] = "<span><b><i class=\'fa fa-exclamation\'></i> Error:</b> No coinciden el email o la Password</span>";
-      $alerta['clase'] = "red black-text";
+      $alerta['mensaje'] = "Email o Password incorrecta";
+      $alerta['titulo'] = "<b><i class=\'fa fa-exclamation\'></i> Error:</b>";
+      $alerta['clase'] = "alert-danger";
     }
     print_r(json_encode($alerta));
   }
